@@ -1,1 +1,1 @@
-# osmonddev_portfolio.github.io
+# osmonddev_portfolio
