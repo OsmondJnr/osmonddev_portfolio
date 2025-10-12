@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="my_portfilio.css">
+    <title>My Portolio</title>
+</head>
+<body>
+    
+      <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="./pictures/kemdy.jpg" alt="Osmond" />
+            <span>Osmond.dev</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#certification">Certifications</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!--hero section-->
+    <section class="hero" id="home">
+        <div class="hero-card">
+            <img src="./pictures/landing_pic.jpg" alt="profile">
+            <h2>Hey, I’m Osmond </h2>
+            <p>Frontend Developer | Designer | Tech Enthusiast</p>
+            <a href="#" class="btn">Download CV</a>
+        </div>
+  </section>
+
+    <!--about section-->
+    <section class="about" id="about">
+        <h1>about me</h1>
+        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit deserunt, necessitatibus minus quisquam nam beatae distinctio enim maiores voluptatem ipsam eaque autem voluptatum qui vero voluptatibus nostrum esse fuga, reiciendis eum ea, iste accusamus. Sed, consectetur consequatur. Est neque, nesciunt quis eaque, eveniet nam corporis optio atque aut nobis consequatur dicta? Atque quae non facere temporibus eligendi praesentium vel sequi?</h3>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certification" class="certificate">
+      <h2>Certifications</h2>
+      <div class="cert-container">
+        <div class="cert-card">
+          <img src="./pictures/doc.png" alt="Certificate">
+          <div class="overlay">
+            <p>Certificate of Completion - Frontend Foundations</p>
+          </div>
+        </div>
+        <div class="cert-card">
+          <img src="./pictures/doc.png" alt="Certificate">
+          <div class="overlay">
+            <p>Certificate of Achievement - UI Design Mastery</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ <!-- PROJECTS -->
+    <section id="projects">
+        <h3>Projects</h3>
+        <div class="projects">
+            <div class="card">
+                <h4>Portfolio Website</h4>
+                <p>A sleek glassmorphism-inspired portfolio site with responsive design.</p>
+                <a href="#">View Project &rarr;</a>
+            </div>
+            <div class="card">
+                <h4>E-commerce UI</h4>
+                <p>A modern shopping site with product filtering, cart, and checkout flow.</p>
+                <a href="#">View Project &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h3>Contact Me</h3>
+        <p>Got a project in mind? Let’s connect &darr;</p>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="4" placeholder="Your Message" required ></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+  </section>
+
+
+<!--   footer section starts here-->
+    <section class="footer">
+
+        <!--footer-->
+	    <footer>
+		    <div class="waves">
+			    <div class="wave" id="wave1"></div>
+			    <div class="wave" id="wave2"></div>
+			    <div class="wave" id="wave3"></div>
+			    <div class="wave" id="wave4"></div>
+
+		    </div>
+		    <h3> <a href="#home">Osmond.dev</a></h3>
+		    <ul class="social_icons">
+			    <li><a href="https:facebook.com"><ion-icon name="logo-facebook"></ion-icon></a></li>
+			    <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+			    <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+			    <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+		    </ul>
+		    <ul class="menu">
+			    <li><a href="#home">Home</a></li>
+			    <li><a href="#about">About</a></li>
+			    <li><a href="#certifications">certifications</a></li>
+			    <li><a href="#projects">project</a></li>
+                <li><a href="#contact">Contact</a></li>
+		    </ul>
+            <div class="credit">created by   <span>Osmond.dev</span> | All Rights Reserved</div>
+	    </footer>
+	    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+	    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    </section>
+
+<!--footer section ends here-->
+
+
+
+<script> 
+
+    // Navbar Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+      hamburger.classList.toggle('active');
+    });
+    const navlinksAll = document.querySelectorAll('.nav-links a');
+    navlinksAll.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+            hamburger.classList.remove('active');
+        });
+    });
+
+    window.addEventListener('scroll', () => {
+        if (navLinks.classList.contains('show')) {
+            navLinks.classList.remove('show');
+            hamburger.classList.remove('active');
+        }
+    });
+
+    
+
+    // Scroll Reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('section, .card, .cert-card').forEach(el => observer.observe(el));
+
+</script>
+
+
+</body>
+</html>
