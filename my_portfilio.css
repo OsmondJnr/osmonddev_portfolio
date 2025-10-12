@@ -462,7 +462,6 @@ section.show, .card.show, .container.show {
         top: 70px;
         right: 10px;
         background: var(--mainblack);
-        backdrop-filter: blur(10px);
         flex-direction: column;
         padding: 20px;
         border-radius: 15px;
@@ -492,6 +491,7 @@ section.show, .card.show, .container.show {
     }
 
 }
+
 
 
 
